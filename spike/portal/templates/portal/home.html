@@ -28,7 +28,7 @@ li small{color:var(--muted)}
 <form action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Language' %}">{% csrf_token %}
 <input type="hidden" name="next" value="{{ request.path }}">
 {% get_available_languages as LANGS %}
-{% for code, name in LANGS %}<button type="submit" name="language" value="{{ code }}" lang="{{ code }}"{% if code == LANG %} aria-current="true"{% endif %}>{{ name }}</button>{% endfor %}
+{% for code, name in LANGS %}{% get_language_info for code as li %}<button type="submit" name="language" value="{{ code }}" lang="{{ code }}"{% if code == LANG %} aria-current="true"{% endif %}>{{ li.name_local }}</button>{% endfor %}
 </form>
 </header>
 <main>

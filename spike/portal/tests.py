@@ -28,3 +28,8 @@ class LanguageSpikeTests(TestCase):
     def test_unofficial_banner_on_every_language(self):
         for lang in ("so", "en", "ar"):
             self.assertIn('role="note"', self.get(lang).content.decode())
+
+    def test_language_buttons_use_native_names(self):
+        html = self.get("ar").content.decode()
+        self.assertIn(">English</button>", html)
+        self.assertIn(">Soomaali</button>", html)
