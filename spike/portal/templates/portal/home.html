@@ -1,0 +1,41 @@
+{% load i18n %}{% get_current_language as LANG %}{% get_current_language_bidi as BIDI %}<!doctype html>
+<html lang="{{ LANG }}" dir="{% if BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% trans "SL Digital – demo portal" %}</title>
+<style>
+:root{--bg:#fff;--fg:#1b2a2f;--muted:#51656b;--brand:#0b6b4f;--card:#f3f7f6;--warn:#fff4d6;--warnfg:#5a4300}
+@media (prefers-color-scheme:dark){:root{--bg:#10191c;--fg:#e8f0ee;--muted:#9fb3b8;--brand:#5fd1a8;--card:#18262a;--warn:#3a2f10;--warnfg:#ffe9a8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,"Noto Sans","Noto Naskh Arabic",sans-serif}
+.banner{background:var(--warn);color:var(--warnfg);padding:.5rem 1rem;text-align:center;font-weight:600}
+header,main{max-width:60rem;margin:0 auto;padding:1rem}
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+h1{color:var(--brand);margin:0;font-size:1.4rem}
+form{display:flex;gap:.5rem}
+button{min-height:44px;min-width:44px;padding:.4rem .9rem;border:1px solid var(--brand);background:transparent;color:var(--fg);border-radius:.5rem;cursor:pointer}
+button[aria-current=true]{background:var(--brand);color:var(--bg)}
+ul{list-style:none;padding:0;display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+li{background:var(--card);padding:1rem;border-radius:.75rem}
+li small{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="banner" role="note">{% trans "Unofficial demo – synthetic data only. Not a government platform." %}</div>
+<header>
+<h1>{% trans "SL Digital – demo portal" %}</h1>
+<form action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Language' %}">{% csrf_token %}
+<input type="hidden" name="next" value="{{ request.path }}">
+{% get_available_languages as LANGS %}
+{% for code, name in LANGS %}<button type="submit" name="language" value="{{ code }}" lang="{{ code }}"{% if code == LANG %} aria-current="true"{% endif %}>{{ name }}</button>{% endfor %}
+</form>
+</header>
+<main>
+<h2>{% trans "Example services" %}</h2>
+<ul>
+{% for s in services %}<li><strong>{{ s.name }}</strong><br><small>{{ s.agency }}</small></li>{% endfor %}
+</ul>
+</main>
+</body>
+</html>

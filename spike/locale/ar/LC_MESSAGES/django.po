@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-17 08:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: portal/templates/portal/home.html:6 portal/templates/portal/home.html:27
+msgid "SL Digital – demo portal"
+msgstr "SL Digital – بوابة تجريبية"
+
+#: portal/templates/portal/home.html:25
+msgid "Unofficial demo – synthetic data only. Not a government platform."
+msgstr "نموذج تجريبي غير رسمي – بيانات اصطناعية فقط. ليست منصة حكومية."
+
+#: portal/templates/portal/home.html:28
+msgid "Language"
+msgstr "اللغة"
+
+#: portal/templates/portal/home.html:35
+msgid "Example services"
+msgstr "خدمات توضيحية"
+
+#: portal/views.py:6
+msgid "Book an appointment (demo)"
+msgstr "حجز موعد (تجريبي)"
+
+#: portal/views.py:6
+msgid "Demo Agency A"
+msgstr "جهة تجريبية أ"
+
+#: portal/views.py:7
+msgid "Request a certificate (demo)"
+msgstr "طلب شهادة (تجريبي)"
+
+#: portal/views.py:7
+msgid "Demo Agency B"
+msgstr "جهة تجريبية ب"
+
+#: portal/views.py:8
+msgid "Business service enquiry (demo)"
+msgstr "استعلام عن خدمة أعمال (تجريبي)"
+
+#: portal/views.py:8
+msgid "Demo Agency C"
+msgstr "جهة تجريبية ج"
+
+#: portal/views.py:9
+msgid "Track a request (demo)"
+msgstr "متابعة طلب (تجريبي)"
+
+#: portal/views.py:9
+msgid "Demo Agency D"
+msgstr "جهة تجريبية د"
